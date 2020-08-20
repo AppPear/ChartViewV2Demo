@@ -21,9 +21,9 @@ struct ContentView: View {
 		ColorGradient(ChartColors.orangeBright, ChartColors.orangeDark),
 		ColorGradient(.purple, .blue)
 	])
-	let blueStlye = ChartStyle(backgroundColor: .white,
+	let blueStyle = ChartStyle(backgroundColor: .white,
 							   foregroundColor: [ColorGradient(.purple, .blue)])
-	let orangeStlye = ChartStyle(backgroundColor: .white,
+	let orangeStyle = ChartStyle(backgroundColor: .white,
 								 foregroundColor: [ColorGradient(ChartColors.orangeBright, ChartColors.orangeDark)])
 
 	var body: some View {
@@ -57,7 +57,7 @@ struct ContentView: View {
 						BarChart()
 					}
 					.data(data3)
-					.chartStyle(orangeStlye)
+					.chartStyle(orangeStyle)
 					.frame(width: 160, height: 240)
 					.padding()
 				}
@@ -66,14 +66,14 @@ struct ContentView: View {
 
 					PieChart()
 						.data(data1)
-						.chartStyle(orangeStlye)
+						.chartStyle(orangeStyle)
 
 					CardView {
 						ChartLabel("Pie Chart", type: .title)
 						PieChart()
 					}
 					.data(data2)
-					.chartStyle(blueStlye)
+					.chartStyle(blueStyle)
 					.padding()
 
 
@@ -89,13 +89,13 @@ struct ContentView: View {
 						LineChart()
 					}
 					.data(data1)
-					.chartStyle(blueStlye)
+					.chartStyle(blueStyle)
 					.padding()
 
 
 					LineChart()
 						.data(data2)
-						.chartStyle(orangeStlye)
+						.chartStyle(orangeStyle)
 
 				}
 				.tabItem { Image(systemName:"waveform.path.ecg.rectangle") }.tag(3)
