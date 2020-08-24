@@ -16,6 +16,7 @@ struct ContentView: View {
 	@State var data1: [Double] = (0..<16).map { _ in .random(in: 9.0...100.0) }
 	@State var data2: [Double] = (0..<16).map { _ in .random(in: 9.0...100.0) }
 	@State var data3: [Double] = (0..<12).map { _ in .random(in: 9.0...100.0) }
+	@State var data4: [Double] = (0..<8) .map { _ in .random(in: 1.0...125.0) }
 
 	let mixedColorStyle = ChartStyle(backgroundColor: .white, foregroundColor: [
 		ColorGradient(ChartColors.orangeBright, ChartColors.orangeDark),
@@ -26,6 +27,15 @@ struct ContentView: View {
 	let orangeStyle = ChartStyle(backgroundColor: .white,
 								 foregroundColor: [ColorGradient(ChartColors.orangeBright, ChartColors.orangeDark)])
 
+	let multiStyle = ChartStyle(backgroundColor: Color.green.opacity(0.2),
+								foregroundColor:
+									[ColorGradient(.purple, .blue),
+									 ColorGradient(.orange, .red),
+									 ColorGradient(.green, .yellow),
+									 ColorGradient(.red, .purple),
+									 ColorGradient(.yellow, .orange),
+									])
+
 	var body: some View {
 		VStack {
 
@@ -34,6 +44,7 @@ struct ContentView: View {
 					self.data1 = (0..<16).map { _ in .random(in: 9.0...100.0) } as [Double]
 					self.data2 = (0..<16).map { _ in .random(in: 9.0...100.0) } as [Double]
 					self.data3 = (0..<16).map { _ in .random(in: 9.0...100.0) } as [Double]
+					self.data4 = (0..<8) .map { _ in .random(in: 1.0...125.0) } as [Double]
 				}) {
 					Text("Shuffle baby")
 				}
@@ -102,10 +113,22 @@ struct ContentView: View {
 
 				VStack {
 
-					// More types to come
+					RingsChart()
+						.data(self.data4)
+						.chartStyle(multiStyle)
+						.padding()
+
+					CardView(showShadow: false) {
+						ChartLabel("Rings Chart", type: .legend)
+						RingsChart()
+					}
+						.data(Array(self.data4[0...2]))
+						.chartStyle(multiStyle)
+						.frame(width: 130, height: 130)
+						.padding([.bottom])
 
 				}
-				.tabItem { Image(systemName:"questionmark.diamond.fill") }.tag(4)
+				.tabItem { Image(systemName:"circle") }.tag(4)
 			}
 		}
 	}
