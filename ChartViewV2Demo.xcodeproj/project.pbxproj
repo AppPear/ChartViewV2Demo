@@ -293,6 +293,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"ChartViewV2Demo/Preview Content\"";
 				DEVELOPMENT_TEAM = E4G5RJH99S;
 				ENABLE_PREVIEWS = YES;
@@ -313,6 +314,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"ChartViewV2Demo/Preview Content\"";
 				DEVELOPMENT_TEAM = E4G5RJH99S;
 				ENABLE_PREVIEWS = YES;
@@ -357,7 +359,7 @@
 			repositoryURL = "https://github.com/AppPear/ChartView.git";
 			requirement = {
 				kind = exactVersion;
-				version = "2.0.0-beta.1";
+				version = "2.0.0-beta.2";
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
